@@ -1,0 +1,81 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.chatContainer {
+  width: 500px;
+  height: 600px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.messageList {
+  flex-grow: 1;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.messageContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+}
+
+.message {
+  padding: 8px 12px;
+  border-radius: 16px;
+  max-width: 70%;
+}
+
+.userMessage {
+  background-color: #007bff;
+  color: #fff;
+  align-self: flex-end;
+}
+
+.botMessage {
+  background-color: #e9ecef;
+  color: #212529;
+  align-self: flex-start;
+  margin-top: 4px;
+}
+
+.inputContainer {
+  display: flex;
+  padding: 10px;
+  background-color: #fff;
+  border-top: 1px solid #dee2e6;
+}
+
+.input {
+  flex-grow: 1;
+  padding: 8px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+.sendButton {
+  margin-left: 10px;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.clearButton {
+  margin-left: 10px;
+  padding: 8px 16px;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
