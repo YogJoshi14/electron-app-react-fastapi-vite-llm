@@ -91,3 +91,7 @@ package-lock.json
 model/
 model/llamini
 *.zip
+dist
+*/dist
+*/build
+*.exe

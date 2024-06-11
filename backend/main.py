@@ -2,13 +2,18 @@ from fastapi import FastAPI, Request, Response
 from fastapi.responses import StreamingResponse
 from fastapi.middleware.cors import CORSMiddleware
 import time
+import os
 # LLM section import
 import torch
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 # IMPORTS FOR TEXT GENERATION PIPELINE CHAIN
-from langchain.llms import HuggingFacePipeline
+from langchain_community.llms import HuggingFacePipeline
 from langchain import PromptTemplate, LLMChain
 import copy
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 
 app = FastAPI(
@@ -19,7 +24,7 @@ app = FastAPI(
 # Set up CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],  # The frontend origin
+    allow_origins=[ os.getenv('FRONTEND_URL')],  # The frontend origin
     allow_credentials=True,
     allow_methods=["*"],  # Allow all methods
     allow_headers=["*"],  # Allow all headers
@@ -29,7 +34,7 @@ app.add_middleware(
 
 
 ### INITIALIZING LAMINI MODEL
-checkpoint = "model/llamini"
+checkpoint =  os.getenv('MODEL_PATH')
 # # Load model directly
 # from transformers import AutoTokenizer, AutoModelForCausalLM
 
